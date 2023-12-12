@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Install font */
+@font-face {
+  font-family: "Clear Sans";
+  src: url("/assets/fonts/ClearSans/ClearSans-Regular.ttf") format("ttf"),
+    url("/assets/fonts/ClearSans/ClearSans-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Clear Sans";
+  src: url("/assets/fonts/ClearSans/ClearSans-Italic.ttf") format("ttf"),
+    url("/assets/fonts/ClearSans/ClearSans-Italic.ttf.woff2") format("woff2");
+  font-weight: normal;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Clear Sans";
+  src: url("/assets/fonts/ClearSans/ClearSans-Medium.ttf") format("ttf"),
+    url("/assets/fonts/ClearSans/ClearSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Clear Sans";
+  src: url("/assets/fonts/ClearSans/ClearSans-MediumItalic.ttf") format("ttf"),
+    url("/assets/fonts/ClearSans/ClearSans-MediumItalic.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Clear Sans";
+  src: url("/assets/fonts/ClearSans/ClearSans-Bold.ttf") format("ttf"),
+    url("/assets/fonts/ClearSans/ClearSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Clear Sans";
+  src: url("/assets/fonts/ClearSans/ClearSans-BoldItalic.ttf") format("ttf"),
+    url("/assets/fonts/ClearSans/ClearSans-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+}
+
+/* Open Sans */
+@font-face {
+  font-family: "Open Sans";
+  src: url("/assets/fonts/OpenSans/OpenSans-Regular.ttf") format("ttf"),
+    url("/assets/fonts/OpenSans/OpenSans-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("/assets/fonts/OpenSans/OpenSans-Italic.ttf") format("ttf"),
+    url("/assets/fonts/OpenSans/OpenSans-Italic.woff2") format("woff2");
+  font-weight: normal;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("/assets/fonts/OpenSans/OpenSans-Medium.ttf") format("ttf"),
+    url("/assets/fonts/OpenSans/OpenSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("/assets/fonts/OpenSans/OpenSans-MediumItalic.ttf") format("ttf"),
+    url("/assets/fonts/OpenSans/OpenSans-MediumItalic.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("/assets/fonts/OpenSans/OpenSans-SemiBold.ttf") format("ttf"),
+    url("/assets/fonts/OpenSans/OpenSans-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("/assets/fonts/OpenSans/OpenSans-SemiBoldItalic.ttf") format("ttf"),
+    url("/assets/fonts/OpenSans/OpenSans-SemiBoldItalic.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("/assets/fonts/OpenSans/OpenSans-Bold.ttf") format("ttf"),
+    url("/assets/fonts/OpenSans/OpenSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("/assets/fonts/OpenSans/OpenSans-BoldItalic.ttf") format("ttf"),
+    url("/assets/fonts/OpenSans/OpenSans-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+}
+/* End install font */
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: theme("colors.black");
+  /* letter-spacing: -0.72px; */
+  leading-trim: both;
+  text-edge: cap;
+}
+
+/* typography */
+/* https://seek-oss.github.io/capsize/ */
+/* Using leading-trim, so please import numbers of fonts in design to this link and get codes */
+.heading-1 {
+  font-size: theme("fontSize.7xl");
+  line-height: 1.02;
+  font-family: theme("fontFamily.title");
+  font-weight: theme("fontWeight.medium");
+  letter-spacing: -2.4px;
+}
+.heading-2 {
+  font-size: theme("fontSize.2xl");
+  line-height: 1;
+  font-family: theme("fontFamily.title");
+  font-weight: theme("fontWeight.semibold");
+  letter-spacing: -2.4px;
+
+  @screen lg {
+    font-size: theme("fontSize.4xl");
+  }
+}
+.heading-3 {
+  font-size: theme("fontSize.2xl");
+  line-height: 1.3125; /* 42px */
+  font-family: theme("fontFamily.title");
+  font-weight: theme("fontWeight.medium");
+  letter-spacing: -0.72px;
+}
+.heading-4 {
+  font-size: theme("fontSize.lg");
+  line-height: 1.33333333333; /* 32px */
+  font-family: theme("fontFamily.title");
+  font-weight: theme("fontWeight.medium");
+  letter-spacing: -0.72px;
+
+  @screen lg {
+    font-size: theme("fontSize.xl");
+  }
+}
+.text-body {
+  font-size: theme("fontSize.base");
+  line-height: 1.49;
+}
+.text-lg {
+  font-size: theme("fontSize.lg");
+  line-height: 1.58;
+}
+.text-leading-1 {
+  font-size: theme("fontSize.xl");
+  line-height: 1.32;
+  margin-bottom: 1.5rem;
+
+  @screen lg {
+    font-size: theme("fontSize.3xl");
+  }
+}
+.text-leading-2 {
+  font-family: theme("fontFamily.title");
+  font-size: theme("fontSize.xl");
+  line-height: 1;
+  font-weight: theme("fontWeight.medium");
+}
+.text-display {
+  font-size: theme("fontSize.xl");
+  line-height: 1;
+  font-weight: theme("fontWeight.bold");
+
+  @screen lg {
+    font-size: theme("fontSize.3xl");
+  }
+}
+.text-label {
+  font-size: theme("fontSize.base");
+  line-height: 1;
+  font-family: theme("fontFamily.title");
+  font-weight: theme("fontWeight.medium");
+}
+.link {
+  line-height: 1.58;
+  text-decoration: underline;
+  letter-spacing: 1%;
+  font-weight: theme("fontWeight.semibold");
+}
+.link.link-lg {
+  font-size: theme("fontSize.base");
+
+  @screen lg {
+    font-size: theme("fontSize.xl");
+  }
+}
+
+/* Testimonial */
+.gallery-testimonial .swiper-wrapper {
+  align-items: flex-end;
+}
