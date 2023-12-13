@@ -1,5 +1,7 @@
 // import Providers from '@modules/providers';
 import "@styles/globals.css";
+import AvaHeader from "@components/layout/ava-header";
+
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" data-lt-installed="true">
@@ -9,8 +11,24 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         cz-shortcut-listen="true"
       >
         {/* <Providers> */}
-        <body className=" bg-neutral-50">
-          <main className="relative">{children}</main>
+        <body className=" bg-white">
+          <main className="relative">
+            <div className="pt-10">
+              <header>
+                <div className="container">
+                  <AvaHeader />
+                </div>
+              </header>
+              {/* End Header */}
+              <div className="body-content">
+                <div className="container">
+                  {/* body */}
+                  {children}
+                  {/* End body */}
+                </div>
+              </div>
+            </div>
+          </main>
         </body>
         {/* </Providers> */}
       </body>
