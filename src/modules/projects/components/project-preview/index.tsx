@@ -15,7 +15,7 @@ const ProjectPreview = ({
 
   return (
     <button className="cursor-pointer">
-      <div className="font-normal block p-[25px] cursor-pointer  relative h-full">
+      <div className="font-normal block p-[25px]  cursor-pointer  relative h-full">
         <div className="group">
           <div className="flex flex-col">
             <div className="w-full">
