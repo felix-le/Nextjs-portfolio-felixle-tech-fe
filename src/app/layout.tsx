@@ -9,7 +9,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         cz-shortcut-listen="true"
       >
         {/* <Providers> */}
-        <body>
+        <body className=" bg-neutral-50">
           <main className="relative">{children}</main>
         </body>
         {/* </Providers> */}
