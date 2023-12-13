@@ -4,32 +4,22 @@ import AvaHeader from "@components/layout/ava-header";
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en" data-lt-installed="true">
-      <body
-        data-new-gr-c-s-check="14.1115.0"
-        data-gr-ext-installed
-        cz-shortcut-listen="true"
-      >
-        {/* <Providers> */}
-        <body className=" bg-white">
-          <main className="relative">
-            <div className="pt-10">
-              <header>
-                <div className="container">
-                  <AvaHeader />
-                </div>
-              </header>
-              {/* End Header */}
-              <div className="body-content">
-                <div className="container">
-                  {/* body */}
-                  {children}
-                  {/* End body */}
-                </div>
-              </div>
+    <html lang="en">
+      {/* <Providers> */}
+      <body className=" bg-white w-screen h-screen">
+        <main className="relative h-[85%]">
+          <header>
+            <div className="container pt-10">
+              <AvaHeader />
             </div>
-          </main>
-        </body>
+          </header>
+          {/* End Header */}
+          <div className="pt-10 h-[90%]">
+            {/* body */}
+            {children}
+            {/* End body */}
+          </div>
+        </main>
         {/* </Providers> */}
       </body>
     </html>

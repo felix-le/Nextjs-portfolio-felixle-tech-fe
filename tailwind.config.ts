@@ -10,12 +10,14 @@ module.exports = {
   ],
   theme: {
     colors: {
-      primary: "#6c2e1f",
+      primary: "#f18a00",
+      secondary: "rgb(102, 102, 102)",
+      // primary: "#6c2e1f",
       black: "#000",
       white: "#fff",
       red: "#dc2626",
       green: "#059669",
-      secondary: "#348efe",
+      blue: "#348efe",
       brand: {
         react: "#087EBF",
         typescript: "#3178c6",
@@ -101,6 +103,7 @@ module.exports = {
     require("@tailwindcss/forms")({
       strategy: "base",
     }),
+    require("@tailwindcss/aspect-ratio"),
     function ({
       addComponents,
       addUtilities,

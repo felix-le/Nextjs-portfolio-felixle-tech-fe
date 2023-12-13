@@ -46,6 +46,7 @@ const index = () => {
                 className="w-[168px] h-[168px] rounded-[50%]"
                 src={AvaHeader}
                 alt=""
+                priority={true}
               />
             </div>
             <div className="ml-5 flex flex-col">
@@ -72,7 +73,7 @@ const index = () => {
                     <a
                       target="_blank"
                       href={link.link}
-                      className="text-base text-secondary font-medium hover:opacity-50 underline "
+                      className="text-base text-blue font-medium hover:opacity-50 underline "
                     >
                       {link.title}
                     </a>
