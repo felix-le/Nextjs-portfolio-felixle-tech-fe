@@ -7,6 +7,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
     <html lang="en">
       {/* <Providers> */}
       <body className=" bg-white w-screen h-screen">
+        <div id="modal-root"></div>
         <main className="relative h-[85%]">
           <header>
             <div className="container pt-10">
