@@ -4,7 +4,6 @@ interface ApiProp {
   url: string;
   params?: any;
 }
-
 const apiURL: string | undefined = process.env.NEXT_PUBLIC_API_URL;
 const apiToken: string | undefined = process.env.API_TOKEN;
 
