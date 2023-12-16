@@ -10,6 +10,7 @@ const apiToken: string | undefined = process.env.API_TOKEN;
 
 const getHeaders = () => ({
   Authorization: `Bearer ${apiToken}`,
+  // add y: Request header field cache-control is not allowed by Access-Control-Allow-Headers in preflight response.
 });
 
 export const api = async (url: string, params: any = {}): Promise<any> => {
