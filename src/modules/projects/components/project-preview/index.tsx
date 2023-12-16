@@ -4,6 +4,7 @@ import {IProjectPreview} from "@modules/projects/types";
 import Thumbnail from "../thumbnail";
 import defaultThumbnail from "@images/default-thumbnail.png";
 import dynamic from "next/dynamic";
+import Status from "@modules/projects/components/project-preview/status";
 
 const ProjectModal = dynamic(
   () => import("@modules/projects/components/project-modal"),
@@ -32,23 +33,21 @@ const ProjectPreview = ({
   };
   return (
     <>
-      <button className="cursor-pointer" onClick={openModal}>
+      <button className="cursor-pointer h-full" onClick={openModal}>
         <div className="font-normal block p-[25px]  cursor-pointer  relative h-full">
           <div className="group">
-            <div className="flex flex-col">
-              <div className="w-full">
+            <div className="flex flex-col justify-between">
+              <div className="w-full flex flex-col justify-center items-center">
                 <Thumbnail thumbnail={displayThumbnail} size="full" />
               </div>
               <div className="mt-4">
                 <h3 className="text-sm uppercase w-full text-center font-display font-normal tracking-widest text-secondary">
                   {title}
                 </h3>
-                <div className="mt-3 text-sm w-full font-thin text-center hover:text-black flex items-center justify-center flex-col">
-                  <p>{subTitle}</p>
-                  <p>{endDate}</p>
-                  <p>{status}</p>
-                  <p>{technologies?.frontend}</p>
-                  <p>{technologies?.backend}</p>
+                <div className="mt-3 text-sm w-full font-thin hover:text-black ">
+                  <Status status={status}></Status>
+                  <p className="text-left text-sm">{technologies?.frontend}</p>
+                  <p className="text-left text-sm">{technologies?.backend}</p>
                 </div>
               </div>
             </div>

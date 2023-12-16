@@ -1,15 +1,17 @@
 export interface IProjectPreview {
   thumbnail?: string | null;
   title: string;
-  subTitle: string;
-  endDate: string;
-  status: "live" | "pending" | "working" | null;
+  subTitle?: string;
+  endDate?: Date | string;
+  status: "Active" | "Pending" | "On Going" | null;
   technologies: {
     frontend: Array<string> | null;
     backend: Array<string> | null;
     database: Array<string> | null;
     other?: Array<string> | null;
   } | null;
+  isHighlight?: boolean;
+  order_number?: number;
 }
 
 export interface IProject extends IProjectPreview {
@@ -17,7 +19,7 @@ export interface IProject extends IProjectPreview {
   description: string;
   clients: Array<string>;
   organization: string;
-  startDate: string;
+  startDate?: Date | string;
   role: string;
   teamSize: number;
   finalUrl: string;

@@ -1,5 +1,6 @@
 import SideBar from "@components/side-bar";
 import Content from "@components/layout/content-box";
+
 export default function Home() {
   return (
     <>

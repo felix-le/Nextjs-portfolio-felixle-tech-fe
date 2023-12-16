@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 import {StaticImageData} from "next/image";
 type ThumbnailProps = {
-  thumbnail?: string | StaticImageData | null;
+  thumbnail?: any;
   images?: {url: string}[] | null;
   size?: "small" | "medium" | "large" | "full";
 };
@@ -16,40 +16,48 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
 }) => {
   const initialImage =
     thumbnail || (images && images.length > 0 ? images[0]?.url : undefined);
-
   return (
     <div
-      className={clsx("relative aspect-[29/34]", {
-        "w-[180px]": size === "small",
-        "w-[290px]": size === "medium",
-        "w-[440px]": size === "large",
-        "w-full": size === "full",
-      })}
+      className={clsx(
+        "relative aspect-[29/34] flex justify-center items-center bg-neutral-300",
+        {
+          "w-[180px]": size === "small",
+          "w-[290px]": size === "medium",
+          "w-[440px]": size === "large",
+          "w-full": size === "full",
+        },
+      )}
     >
-      <ImageOrPlaceholder image={initialImage} size={size} />
+      <ImageOrPlaceholder size={size} img={initialImage} />
     </div>
   );
 };
 
 const ImageOrPlaceholder: React.FC<{
-  image?: string | StaticImageData | null;
+  img?: any;
   size: "small" | "medium" | "large" | "full";
-}> = ({image, size}) => {
-  return image ? (
+}> = ({img, size}, i) => {
+  return img ? (
     <Image
-      src={image}
+      key={i}
+      src={img.url}
       alt="Thumbnail"
-      className=" inset-0"
-      draggable={false}
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+      className=" inset-0 w-full "
       style={{
-        objectFit: "cover",
-        objectPosition: "center",
+        maxHeight: "100%",
+        maxWidth: "100%",
       }}
+      draggable={false}
+      sizes={size}
+      width={img.width}
+      height={img.height}
       priority={true}
     />
   ) : (
-    <div className="w-full h-full absolute inset-0 bg-gray-100 flex items-center justify-center">
+    <div
+      key={i}
+      className="w-full h-full absolute inset-0 bg-gray-100 flex items-center justify-center"
+    >
       <PlaceholderImage size={size === "small" ? 16 : 24} />
     </div>
   );

@@ -28,7 +28,8 @@
       "@images/*": ["images/*"],
       "@app/*": ["app/*"],
       "@styles/*": ["styles/*"],
-      "@data/*": ["data/*"]
+      "@data/*": ["data/*"],
+      "@services/*": ["services/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
