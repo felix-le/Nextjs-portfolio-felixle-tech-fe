@@ -22,7 +22,11 @@ const Status: React.FC<StatusProps> = ({status}) => {
       break;
   }
 
-  return <span className={`px-2 py-1 rounded ${colorClass} `}>{status}</span>;
+  return (
+    <span className={`px-2 py-1 rounded ${colorClass} font-bold `}>
+      {status}
+    </span>
+  );
 };
 
 export default Status;

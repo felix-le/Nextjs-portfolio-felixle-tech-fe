@@ -5,6 +5,7 @@ import Thumbnail from "../thumbnail";
 import defaultThumbnail from "@images/default-thumbnail.png";
 import dynamic from "next/dynamic";
 import Status from "@modules/projects/components/project-preview/status";
+import ProjectInfo from "@modules/projects/components/project-preview/project-info";
 
 const ProjectModal = dynamic(
   () => import("@modules/projects/components/project-modal"),
@@ -16,8 +17,6 @@ const ProjectModal = dynamic(
 const ProjectPreview = ({
   thumbnail,
   title,
-  subTitle,
-  endDate,
   status,
   technologies,
 }: IProjectPreview) => {
@@ -41,13 +40,16 @@ const ProjectPreview = ({
                 <Thumbnail thumbnail={displayThumbnail} size="full" />
               </div>
               <div className="mt-4">
-                <h3 className="text-sm uppercase w-full text-center font-display font-normal tracking-widest text-secondary">
+                <h3 className="text-sm font-bold text-blue uppercase w-full text-center font-display min-h-[36px] tracking-widest  ">
                   {title}
                 </h3>
-                <div className="mt-3 text-sm w-full font-thin hover:text-black ">
-                  <Status status={status}></Status>
-                  <p className="text-left text-sm">{technologies?.frontend}</p>
-                  <p className="text-left text-sm">{technologies?.backend}</p>
+                <div className="mt-3 text-sm w-full font-thin hover:text-secondary flex flex-col justify-between">
+                  <Status status={status} />
+                  <ProjectInfo
+                    frontend={technologies?.frontend}
+                    backend={technologies?.backend}
+                    database={technologies?.database}
+                  />
                 </div>
               </div>
             </div>

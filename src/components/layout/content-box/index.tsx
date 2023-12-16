@@ -3,6 +3,8 @@ import React, {useEffect, useState} from "react";
 import SearchFn from "@modules/searchFn";
 import ProjectPreview from "@modules/projects/components/project-preview";
 import api, {apiAll} from "@services/api";
+import {sortProjects} from "@modules/projects/components/project-preview/project-sort";
+
 const index = () => {
   const [projects, setProjects] = useState([]);
   const fetchProjects = async () => {
@@ -19,16 +21,16 @@ const index = () => {
   useEffect(() => {
     fetchProjects().then((res) => setProjects(res));
   }, []);
-  const displayProjects = projects.map((project: any) => {
-    const newObj = {
-      ...project,
-      thumbnail: project.thumbnail.data.attributes,
-      media: project.media.data,
-    };
-    return newObj;
-  });
-
-  console.log(displayProjects);
+  const displayProjects = sortProjects(
+    projects.map((project: any) => {
+      const newObj = {
+        ...project,
+        thumbnail: project.thumbnail.data.attributes,
+        media: project.media.data,
+      };
+      return newObj;
+    }),
+  );
 
   return (
     <>
@@ -37,22 +39,27 @@ const index = () => {
       </div> */}
       <div className=" h-[calc(100% - 50px)]">
         {/* map projects and use ProjectPreview */}
-        <ul className="grid grid-cols-4  gap-x-4 gap-y-8 h-full">
-          {displayProjects.map((project: any) => (
-            <li
-              key={project.id}
-              className="bg-white flex justify-center items-center"
-            >
-              <ProjectPreview
-                thumbnail={project.thumbnail}
-                title={project.title}
-                // subTitle={project.subtitle}
-                endDate={project.endDate}
-                status={project.status}
-                technologies={project.tech}
-              />
-            </li>
-          ))}
+        <ul className="grid lg:grid-cols-4 grid-cols-2 gap-x-4 gap-y-8 h-full">
+          {displayProjects.map((project: any) => {
+            const isHighlighted = project.isHighlight;
+            return (
+              <li
+                key={project.id}
+                className={`bg-white flex justify-center items-center hover:opacity-70 hover:shadow-2xl transition-all duration-75 ease-out ${
+                  isHighlighted ? "border-2 border-primary" : ""
+                }`}
+              >
+                <ProjectPreview
+                  thumbnail={project.thumbnail}
+                  title={project.title}
+                  // subTitle={project.subtitle}
+                  endDate={project.endDate}
+                  status={project.status}
+                  technologies={project.tech}
+                />
+              </li>
+            );
+          })}
         </ul>
       </div>
     </>

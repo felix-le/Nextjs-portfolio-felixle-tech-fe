@@ -6,10 +6,10 @@ export default function Home() {
     <>
       <div className="container h-full">
         <div className="flex mt-12 h-full">
-          <div className="mr-10 lg:max-w-[20%] w-full hidden lg:block">
+          <div className="mr-10 lg:max-w-[10%] w-full hidden lg:block">
             <SideBar />
           </div>
-          <div className="lg:max-w-[80%] w-full h-full">
+          <div className="lg:max-w-[90%] w-full h-full">
             <h2 className="text-primary mb-4 text-lg font-bold">Projects</h2>
 
             <div className=" w-full bg-[#13214A13] h-full relative pb-[80px]">

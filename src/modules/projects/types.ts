@@ -5,10 +5,10 @@ export interface IProjectPreview {
   endDate?: Date | string;
   status: "Active" | "Pending" | "On Going" | null;
   technologies: {
-    frontend: Array<string> | null;
-    backend: Array<string> | null;
-    database: Array<string> | null;
-    other?: Array<string> | null;
+    frontend: string | null;
+    backend: string | null;
+    database: string | null;
+    other?: string | null;
   } | null;
   isHighlight?: boolean;
   order_number?: number;
