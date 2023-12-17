@@ -18,7 +18,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
                 </div>
               </header>
               {/* End Header */}
-              <div className="pt-10 h-[90%]">
+              <div className="pt-0 lg:pt-5 h-[90%]">
                 {/* body */}
                 {children}
                 {/* End body */}

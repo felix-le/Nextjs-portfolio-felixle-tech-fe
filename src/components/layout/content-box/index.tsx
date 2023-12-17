@@ -3,8 +3,8 @@ import React, {useEffect, useState, useContext, use} from "react";
 // import SearchFn from "@modules/searchFn";
 import ProjectPreview from "@modules/projects/components/project-preview";
 import {sortProjects} from "@modules/projects/components/project-sort/project-sort";
-import usePaginationParams from "@lib/hooks/use-pagination-params";
-import Pagination from "@modules/common/pagination";
+// import usePaginationParams from "@lib/hooks/use-pagination-params";
+// import Pagination from "@modules/common/pagination";
 import {ProductContext} from "@lib/context/product-context";
 import {filterProjects} from "@modules/projects/components/project-sort/";
 import {FilterContext} from "@lib/context/filer-context";
@@ -19,10 +19,10 @@ const index = () => {
     currentPath = window.location.pathname;
   }
 
-  const {currentPage, rowsPerPage, handleChangePage} = usePaginationParams(
-    displayProjects?.length,
-    currentPath,
-  );
+  // const {currentPage, rowsPerPage, handleChangePage} = usePaginationParams(
+  //   displayProjects?.length,
+  //   currentPath,
+  // );
 
   return (
     <>

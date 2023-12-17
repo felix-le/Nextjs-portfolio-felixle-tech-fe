@@ -28,6 +28,7 @@ export default function Example(): ReactElement {
         <Transition.Root show={mobileFiltersOpen} as={React.Fragment}>
           <Dialog
             as="div"
+            // className="relative z-40  "
             className="relative z-40 lg:hidden"
             onClose={() => setMobileFiltersOpen(false)}
           >
@@ -55,7 +56,7 @@ export default function Example(): ReactElement {
               >
                 <Dialog.Panel className="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-6 shadow-xl">
                   <div className="flex items-center justify-between px-4">
-                    <h2 className="text-lg font-medium text-gray-900">
+                    <h2 className="text-lg font-medium text-gray-900 text-primary">
                       Filters
                     </h2>
                     <button
@@ -147,20 +148,6 @@ export default function Example(): ReactElement {
 
           <div className="pt-2 lg:grid lg:grid-cols-3 lg:gap-x-8 xl:grid-cols-4">
             <aside>
-              <button
-                type="button"
-                className="inline-flex items-center lg:hidden"
-                onClick={() => setMobileFiltersOpen(true)}
-              >
-                <span className="text-sm font-medium text-gray-700">
-                  Filter
-                </span>
-                <PlusIcon
-                  className="ml-1 h-5 w-5 flex-shrink-0 text-gray-400"
-                  aria-hidden="true"
-                />
-              </button>
-
               <div className="hidden lg:block">
                 <form className="space-y-4 divide-y divide-gray-200">
                   {filterFields.map((section, sectionIdx) => (
