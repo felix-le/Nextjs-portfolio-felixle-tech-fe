@@ -1,5 +1,5 @@
 "use client";
-import React, {useState, ReactElement} from "react";
+import React, {useContext, ReactElement} from "react";
 import {Dialog, Disclosure, Transition} from "@headlessui/react";
 import {
   XMarkIcon,
@@ -7,33 +7,19 @@ import {
   PlusIcon,
 } from "@heroicons/react/24/outline";
 import {filterFields} from "./filter-fields";
+import {FilterContext} from "@lib/context/filer-context";
 
 function classNames(...classes: (string | boolean | undefined)[]): string {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Example(): ReactElement {
-  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-  const [selectedOptions, setSelectedOptions] = useState<
-    Record<string, string[]>
-  >({});
-
-  // Function to handle checkbox changes
-  const handleCheckboxChange = (sectionId: string, optionValue: string) => {
-    const newSelectedOptions = {...selectedOptions};
-    if (newSelectedOptions[sectionId]) {
-      if (newSelectedOptions[sectionId].includes(optionValue)) {
-        newSelectedOptions[sectionId] = newSelectedOptions[sectionId].filter(
-          (value) => value !== optionValue,
-        );
-      } else {
-        newSelectedOptions[sectionId].push(optionValue);
-      }
-    } else {
-      newSelectedOptions[sectionId] = [optionValue];
-    }
-    setSelectedOptions(newSelectedOptions);
-  };
+  const {
+    mobileFiltersOpen,
+    setMobileFiltersOpen,
+    filterOpts,
+    handleCheckboxChange,
+  } = useContext(FilterContext);
 
   return (
     <div className="bg-white">
@@ -122,7 +108,7 @@ export default function Example(): ReactElement {
                                       type="checkbox"
                                       className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                                       checked={
-                                        selectedOptions[section.id]?.includes(
+                                        filterOpts[section.id]?.includes(
                                           option.value,
                                         ) || false
                                       }
@@ -197,7 +183,7 @@ export default function Example(): ReactElement {
                                 type="checkbox"
                                 className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                                 checked={
-                                  selectedOptions[section.id]?.includes(
+                                  filterOpts[section.id]?.includes(
                                     option.value,
                                   ) || false
                                 }

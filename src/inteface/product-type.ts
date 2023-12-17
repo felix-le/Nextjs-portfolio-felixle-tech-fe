@@ -12,6 +12,7 @@ export interface IProjectPreview {
   } | null;
   isHighlight?: boolean;
   order_number?: number;
+  tags?: string;
 }
 
 export interface IProject extends IProjectPreview {

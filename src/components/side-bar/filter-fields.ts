@@ -6,8 +6,8 @@ const filterFields: FilterSection[] = [
     name: "Front End",
     options: [
       {value: "JavaScript", label: "JavaScript"},
+      {value: "Shopify", label: "Shopify"},
       {value: "TailwindCSS", label: "TailwindCSS"},
-      {value: "Styled-components", label: "Styled-components"},
       {value: "TypeScript", label: "TypeScript"},
       {value: "NextJS", label: "NextJS"},
       {value: "React", label: "React"},
@@ -47,7 +47,7 @@ const filterFields: FilterSection[] = [
     id: "others",
     name: "Others",
     options: [
-      {value: "PHP", label: "PHP"},
+      {value: "WordPress", label: "WordPress"},
       {value: "React Native", label: "ReactNative"},
     ],
   },

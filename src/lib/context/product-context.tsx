@@ -1,6 +1,5 @@
 "use client";
 import React, {useEffect, useState, createContext} from "react";
-import {IProjectPreview} from "inteface/product-type";
 import api from "@services/api";
 
 export const ProductContext = createContext({} as any);

@@ -30,7 +30,7 @@
       "@styles/*": ["styles/*"],
       "@data/*": ["data/*"],
       "@services/*": ["services/*"],
-      "@types/*": ["types/*"]
+      "@inteface/*": ["inteface/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
