@@ -18,7 +18,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
   return (
     <div
       className={clsx(
-        "relative aspect-[29/34] flex justify-center items-center bg-neutral-300",
+        "relative aspect-[29/34] flex justify-center items-center bg-neutral-300 ",
         {
           "w-[180px]": size === "small",
           "w-[290px]": size === "medium",
@@ -41,15 +41,17 @@ const ImageOrPlaceholder: React.FC<{
       key={i}
       src={img.url}
       alt="Thumbnail"
-      className=" inset-0 w-full "
+      className=" inset-0 "
       style={{
-        maxHeight: "100%",
-        maxWidth: "100%",
+        maxHeight: "150px",
+        maxWidth: "150px",
+        width: "100%",
+        height: "auto",
       }}
       draggable={false}
       sizes={size}
-      width={img.width}
-      height={img.height}
+      width={0}
+      height={0}
       priority={true}
     />
   ) : (

@@ -37,7 +37,7 @@ const ProjectPreview = ({
         <div className="font-normal block p-[25px]  cursor-pointer  relative h-full">
           <div className="group">
             <div className="flex flex-col justify-between">
-              <div className="w-full flex flex-col justify-center items-center">
+              <div className="w-[280px] h-[333] flex flex-col justify-center items-center">
                 <Thumbnail thumbnail={displayThumbnail} size="full" />
               </div>
               <div className="mt-4">
