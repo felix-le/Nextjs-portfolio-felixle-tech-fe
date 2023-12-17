@@ -142,7 +142,7 @@ export default function Example(): ReactElement {
 
         <div className="mx-auto w-full">
           <div className="border-b border-gray-200 pb-2">
-            <h1 className="text-primary mb-4 text-lg font-bold">Sort</h1>
+            <h1 className="text-primary mb-4 text-lg font-bold">Filter</h1>
           </div>
 
           <div className="pt-2 lg:grid lg:grid-cols-3 lg:gap-x-8 xl:grid-cols-4">
@@ -152,7 +152,9 @@ export default function Example(): ReactElement {
                 className="inline-flex items-center lg:hidden"
                 onClick={() => setMobileFiltersOpen(true)}
               >
-                <span className="text-sm font-medium text-gray-700">Sort</span>
+                <span className="text-sm font-medium text-gray-700">
+                  Filter
+                </span>
                 <PlusIcon
                   className="ml-1 h-5 w-5 flex-shrink-0 text-gray-400"
                   aria-hidden="true"
