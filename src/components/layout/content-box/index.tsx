@@ -1,39 +1,14 @@
 "use client";
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useContext, use} from "react";
 // import SearchFn from "@modules/searchFn";
 import ProjectPreview from "@modules/projects/components/project-preview";
-import api from "@services/api";
 import {sortProjects} from "@modules/projects/components/project-preview/project-sort";
 import usePaginationParams from "@lib/hooks/use-pagination-params";
 import Pagination from "@modules/common/pagination";
+import {ProductContext} from "@lib/context/product-context";
 
 const index = () => {
-  const [projects, setProjects] = useState([]);
-  const fetchProjects = async () => {
-    const projects = await api("projects-plural", "populate=*").then(
-      (res) => res.data,
-    );
-    const newProjects = projects.map((project: any) => ({
-      id: project.id,
-      ...project?.attributes,
-    }));
-
-    return newProjects;
-  };
-
-  useEffect(() => {
-    fetchProjects().then((res) => setProjects(res));
-  }, []);
-  const displayProjects = sortProjects(
-    projects.map((project: any) => {
-      const newObj = {
-        ...project,
-        thumbnail: project.thumbnail.data.attributes,
-        media: project.media.data,
-      };
-      return newObj;
-    }),
-  );
+  const {projectData} = useContext(ProductContext);
 
   let currentPath = "";
   if (typeof window !== "undefined") {
@@ -41,7 +16,7 @@ const index = () => {
   }
 
   const {currentPage, rowsPerPage, handleChangePage} = usePaginationParams(
-    displayProjects?.length,
+    projectData?.length,
     currentPath,
   );
 
@@ -49,7 +24,7 @@ const index = () => {
     <>
       <div className=" h-[calc(100% - 50px)]">
         <ul className="grid lg:grid-cols-4 grid-cols-2 gap-x-4 gap-y-8 h-full">
-          {displayProjects
+          {sortProjects(projectData)
             .slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage)
             .map((project: any) => {
               const isHighlighted = project.isHighlight;
@@ -74,7 +49,7 @@ const index = () => {
         </ul>
       </div>
       <Pagination
-        totalItems={displayProjects?.length}
+        totalItems={projectData?.length}
         currentPage={currentPage}
         rowsPerPage={rowsPerPage}
         handleChangePage={handleChangePage}

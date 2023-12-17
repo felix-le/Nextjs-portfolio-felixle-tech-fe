@@ -8,3 +8,7 @@
 8. sorting function
 9. idea for flow
 10. create flow
+
+- Provider (state management)
+- Projects
+- Sidebar state

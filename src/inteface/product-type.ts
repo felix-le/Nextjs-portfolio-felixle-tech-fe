@@ -1,10 +1,10 @@
 export interface IProjectPreview {
   thumbnail?: string | null;
-  title: string;
+  title?: string;
   subTitle?: string;
   endDate?: Date | string;
-  status: "Active" | "Pending" | "On Going" | null;
-  technologies: {
+  status?: "Active" | "Pending" | "On Going" | null;
+  technologies?: {
     frontend: string | null;
     backend: string | null;
     database: string | null;

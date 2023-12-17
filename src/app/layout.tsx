@@ -1,6 +1,7 @@
 // import Providers from '@modules/providers';
 import "@styles/globals.css";
 import AvaHeader from "@components/layout/ava-header";
+import {ProductProvider} from "@lib/context/product-context";
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
@@ -8,20 +9,22 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       {/* <Providers> */}
       <body className=" bg-white w-screen h-screen">
         <div id="modal-root"></div>
-        <main className="relative h-[85%]">
-          <header>
-            <div className="container pt-10">
-              <AvaHeader />
+        <ProductProvider>
+          <main className="relative h-[85%]">
+            <header>
+              <div className="container pt-10">
+                <AvaHeader />
+              </div>
+            </header>
+            {/* End Header */}
+            <div className="pt-10 h-[90%]">
+              {/* body */}
+              {children}
+              {/* End body */}
             </div>
-          </header>
-          {/* End Header */}
-          <div className="pt-10 h-[90%]">
-            {/* body */}
-            {children}
-            {/* End body */}
-          </div>
-        </main>
-        {/* </Providers> */}
+          </main>
+          {/* </Providers> */}
+        </ProductProvider>
       </body>
     </html>
   );

@@ -1,4 +1,4 @@
-import {IProjectPreview} from "@modules/projects/types";
+import {IProjectPreview} from "inteface/product-type";
 
 function sortProjects(projects: IProjectPreview[]): IProjectPreview[] {
   const highlightedProjects = projects.filter((project) => project.isHighlight);

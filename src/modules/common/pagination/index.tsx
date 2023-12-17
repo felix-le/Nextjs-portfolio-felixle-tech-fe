@@ -47,7 +47,7 @@ const Pagination: React.FC<PaginationProps> = ({
 
   return (
     <div
-      className={`card-footer bg-white flex justify-between items-center mt-4 ${customClass}`}
+      className={`card-footer bg-[#F0F0F3] flex justify-between items-center mt-4 ${customClass}`}
       style={{minHeight: "60px"}}
     >
       {numberPage > 1 && (

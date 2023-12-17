@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import {IProjectPreview} from "@modules/projects/types";
+import {IProjectPreview} from "inteface/product-type";
 import Thumbnail from "../thumbnail";
 import defaultThumbnail from "@images/default-thumbnail.png";
 import dynamic from "next/dynamic";
