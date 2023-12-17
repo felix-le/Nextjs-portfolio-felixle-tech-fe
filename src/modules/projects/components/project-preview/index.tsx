@@ -44,7 +44,7 @@ const ProjectPreview = ({
                   {title}
                 </h3>
                 <div className="mt-3 text-sm w-full font-thin hover:text-secondary flex flex-col justify-between">
-                  <Status status={status} />
+                  <Status status={status || null} />
                   <ProjectInfo
                     frontend={technologies?.frontend}
                     backend={technologies?.backend}
