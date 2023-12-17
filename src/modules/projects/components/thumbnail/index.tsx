@@ -2,7 +2,6 @@ import PlaceholderImage from "@modules/common/icons/placeholder-image";
 import clsx from "clsx";
 import Image from "next/image";
 import React from "react";
-import {StaticImageData} from "next/image";
 type ThumbnailProps = {
   thumbnail?: any;
   images?: {url: string}[] | null;

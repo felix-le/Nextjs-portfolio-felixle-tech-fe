@@ -6,7 +6,7 @@ import defaultThumbnail from "@images/default-thumbnail.png";
 import dynamic from "next/dynamic";
 import Status from "@modules/projects/components/project-preview/status";
 import ProjectInfo from "@modules/projects/components/project-preview/project-info";
-
+import ProjectDetail from "@modules/projects/components/project-detail";
 const ProjectModal = dynamic(
   () => import("@modules/projects/components/project-modal"),
   {
@@ -19,6 +19,7 @@ const ProjectPreview = ({
   title,
   status,
   technologies,
+  projectId,
 }: IProjectPreview) => {
   const displayThumbnail = thumbnail || defaultThumbnail;
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -61,9 +62,9 @@ const ProjectPreview = ({
         show={isModalOpen}
         handleShow={closeModal}
         className="your-custom-class"
-        modalTitle="Your Modal Title"
+        // modalTitle="Your Modal Title"
       >
-        <h1>hello</h1>
+        <ProjectDetail projectId={projectId} />
       </ProjectModal>
     </>
   );

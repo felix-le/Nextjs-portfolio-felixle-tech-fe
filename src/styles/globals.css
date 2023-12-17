@@ -243,3 +243,14 @@ body {
 .opacity-100 {
   opacity: 1;
 }
+
+/* product__detail_wrapper */
+
+.product__detail_wrapper ul {
+  list-style: disc;
+  padding: 0;
+  margin: 0;
+}
+.product__detail_wrapper ul li {
+  margin-left: 2rem;
+}

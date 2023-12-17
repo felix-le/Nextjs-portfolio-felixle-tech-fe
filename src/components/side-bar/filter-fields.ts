@@ -13,7 +13,7 @@ const filterFields: FilterSection[] = [
       {value: "React", label: "React"},
       {value: "Redux", label: "Redux"},
       {value: "useContext", label: "useContext"},
-      {value: "APIs", label: "APIs"},
+      {value: "RESTful API", label: "RESTful API"},
     ],
   },
   {
@@ -22,7 +22,6 @@ const filterFields: FilterSection[] = [
     options: [
       {value: "ExpressJS", label: "ExpressJS"},
       {value: "Strapi", label: "Strapi"},
-      {value: "Docker", label: "Docker"},
     ],
   },
   {

@@ -16,9 +16,9 @@ const ProjectModal = ({children, handleShow, show = false}: IProjectModal) => {
       show
       handleShow={handleShow}
       className="your-custom-class"
-      modalTitle="Your Modal Title"
+      // modalTitle="Your Modal Title"
     >
-      <div className="w-full h-full flex justify-center items-center">
+      <div className="w-full h-full flex justify-center items-center flex-col">
         {children}
       </div>
     </Modal>

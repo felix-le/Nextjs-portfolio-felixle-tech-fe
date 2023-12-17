@@ -43,6 +43,7 @@ const index = () => {
                     thumbnail={project.thumbnail}
                     title={project.title}
                     // subTitle={project.subtitle}
+                    projectId={project.id}
                     endDate={project.endDate}
                     status={project.status}
                     technologies={project.tech}
