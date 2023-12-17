@@ -27,7 +27,7 @@ const index = () => {
   return (
     <>
       <div className=" h-[calc(100% - 50px)]">
-        <ul className="grid lg:grid-cols-4 grid-cols-2 gap-x-4 gap-y-8 h-full">
+        <ul className="grid lg:grid-cols-3 grid-cols-2 gap-x-4 gap-y-8 h-full">
           {sortProjects(displayProjects)
             // .slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage)
             .map((project: any) => {
