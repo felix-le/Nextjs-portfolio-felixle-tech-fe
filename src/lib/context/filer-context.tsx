@@ -17,6 +17,8 @@ export const FilterProvider = React.memo(({children}: any) => {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [filterOpts, setFilterOpts] = useState<any>({});
 
+  const [totalProjects, setTotalProjects] = useState(0);
+
   const handleCheckboxChange = (sectionId: string, optionValue: string) => {
     const newSelectedOptions = {...filterOpts};
     if (newSelectedOptions[sectionId]) {
@@ -42,6 +44,8 @@ export const FilterProvider = React.memo(({children}: any) => {
     filterOpts,
     flattenedArray,
     handleCheckboxChange,
+    totalProjects,
+    setTotalProjects,
   };
 
   return (

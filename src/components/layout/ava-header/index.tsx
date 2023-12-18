@@ -64,7 +64,7 @@ const index = () => {
               <p className="text-sm  text-center lg:text-left mt-3 lg:mt-0 mb-1 ">
                 Others: PHP, MySQL, MongoDB, Docker, Git, CI/CD
               </p>
-              <ul className="flex p-0 m-0 mt-3 lg:mt-2 lg:justify-start justify-center">
+              <ul className="flex p-0 m-0 mt-3 lg:mt-2 lg:justify-start justify-center flex-wrap text-center">
                 {LINKS.map((link) => (
                   <li
                     key={link.id}

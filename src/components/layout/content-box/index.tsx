@@ -1,5 +1,5 @@
 "use client";
-import React, {useEffect, useState, useContext, use} from "react";
+import React, {useEffect, useState, useContext, useCallback} from "react";
 // import SearchFn from "@modules/searchFn";
 import ProjectPreview from "@modules/projects/components/project-preview";
 import {sortProjects} from "@modules/projects/components/project-sort/project-sort";
@@ -11,8 +11,16 @@ import {FilterContext} from "@lib/context/filer-context";
 
 const index = () => {
   const {projectData} = useContext(ProductContext);
-  const {flattenedArray} = useContext(FilterContext);
+  const {flattenedArray, setTotalProjects} = useContext(FilterContext);
   const displayProjects = filterProjects(projectData, flattenedArray);
+
+  const updateTotalProjects = useCallback(() => {
+    setTotalProjects(displayProjects?.length);
+  }, [displayProjects]);
+
+  useEffect(() => {
+    updateTotalProjects();
+  }, [updateTotalProjects]);
 
   let currentPath = "";
   if (typeof window !== "undefined") {

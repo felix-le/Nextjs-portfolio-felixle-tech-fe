@@ -27,7 +27,6 @@ const filterFields: FilterSection[] = [
     name: "Database",
     options: [
       {value: "Postgres", label: "Postgres"},
-      {value: "GraphQL", label: "GraphQL"},
       {value: "MySQL", label: "MySQL"},
     ],
   },
