@@ -22,7 +22,7 @@ const ProjectPreview = ({
   projectId,
 }: IProjectPreview) => {
   const displayThumbnail = thumbnail || defaultThumbnail;
-  const [isModalOpen, setIsModalOpen] = React.useState(true);
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   const openModal = () => {
     setIsModalOpen(true);
