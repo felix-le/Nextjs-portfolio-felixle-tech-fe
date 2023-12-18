@@ -13,7 +13,12 @@ const HeroBanner: React.FC<ThumbnailProps> = ({images, size = "large"}) => {
   return (
     <div className="relative w-full flex justify-center items-center">
       {images && images.length > 0 && images[0] && images[0].ext === ".mp4" && (
-        <video autoPlay muted className="w-full max-w-[1300px] h-auto ">
+        <video
+          autoPlay
+          muted
+          controls
+          className="w-full max-w-[1300px] h-auto "
+        >
           <source src={images[0].url} type="video/mp4" />
         </video>
       )}

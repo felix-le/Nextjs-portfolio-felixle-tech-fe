@@ -20,7 +20,7 @@ const LinkClients = ({
       </h3>
       <ul className="list-disc flex flex-wrap">
         {productionUrl && (
-          <li className="w-[40%]">
+          <li className="w-[45%]">
             <p className="leading-8 ">
               <strong>Production Link: </strong>{" "}
               <a className="text-blue" href={productionUrl} target="_blank">
@@ -30,21 +30,21 @@ const LinkClients = ({
           </li>
         )}
         {githubUrl && (
-          <li className="w-[40%]">
+          <li className="w-[45%]">
             <p className="leading-8">
               <strong>Github Link: </strong> {githubUrl}
             </p>
           </li>
         )}
         {clients && (
-          <li className="w-[40%]">
+          <li className="w-[45%]">
             <p className="leading-8">
               <strong>Clients: </strong> {clients}
             </p>
           </li>
         )}
         {organization && (
-          <li className="w-[40%]">
+          <li className="w-[45%]">
             <p className="leading-8">
               <strong>Organization: </strong> {organization}
             </p>
