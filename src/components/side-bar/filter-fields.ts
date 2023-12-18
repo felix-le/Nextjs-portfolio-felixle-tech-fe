@@ -5,15 +5,13 @@ const filterFields: FilterSection[] = [
     id: "frontend",
     name: "Front End",
     options: [
-      {value: "JavaScript", label: "JavaScript"},
+      {
+        value: "JavaScript",
+        label:
+          "JavaScript, React, NextJS, TypeScript, RESTful API, Redux, Gatsby",
+      },
       {value: "Shopify", label: "Shopify"},
       {value: "TailwindCSS", label: "TailwindCSS"},
-      {value: "TypeScript", label: "TypeScript"},
-      {value: "NextJS", label: "NextJS"},
-      {value: "React", label: "React"},
-      {value: "Redux", label: "Redux"},
-      {value: "useContext", label: "useContext"},
-      {value: "RESTful API", label: "RESTful API"},
     ],
   },
   {
@@ -30,17 +28,13 @@ const filterFields: FilterSection[] = [
     options: [
       {value: "Postgres", label: "Postgres"},
       {value: "GraphQL", label: "GraphQL"},
-      {value: "Sqlite", label: "Sqlite"},
       {value: "MySQL", label: "MySQL"},
     ],
   },
   {
     id: "server",
     name: "Server",
-    options: [
-      {value: "Ubuntu", label: "Ubuntu"},
-      {value: "ExpressJS", label: "ExpressJS"},
-    ],
+    options: [{value: "Ubuntu", label: "Ubuntu"}],
   },
   {
     id: "others",
