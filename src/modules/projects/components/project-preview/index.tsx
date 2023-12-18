@@ -22,7 +22,7 @@ const ProjectPreview = ({
   projectId,
 }: IProjectPreview) => {
   const displayThumbnail = thumbnail || defaultThumbnail;
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isModalOpen, setIsModalOpen] = React.useState(true);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -61,7 +61,7 @@ const ProjectPreview = ({
       <ProjectModal
         show={isModalOpen}
         handleShow={closeModal}
-        className="your-custom-class"
+        className=""
         // modalTitle="Your Modal Title"
       >
         <ProjectDetail projectId={projectId} />

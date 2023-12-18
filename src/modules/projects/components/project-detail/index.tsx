@@ -6,7 +6,10 @@ import {
   BlocksRenderer,
   type BlocksContent,
 } from "@strapi/blocks-react-renderer";
-
+import Tech from "./tech";
+import ProjectInfo from "./project-info";
+import LinkClients from "./link-clients";
+import BuyMeBtn from "@modules/common/btns/buy-me";
 interface IProjectDetailProps {
   projectId: number | string;
 }
@@ -41,17 +44,43 @@ const Index: React.FC<IProjectDetailProps> = ({projectId = 1}) => {
 
   return (
     <>
-      <div className="product__detail_wrapper">
+      <div className="container">
         <HeroBanner images={mediaModify} />
-        <h2 className="text-2xl font-bold">{title}</h2>
-        <p className="text-base font-bold">{subtitle}</p>
-        <p className=" text-sm font-bold">{role}</p>
-        <BlocksRenderer content={description} />
-        {/* <p className=" text-sm font-bold">{tech}</p> */}
-        <p className=" text-sm font-bold">{clients}</p>
-        <p className=" text-sm font-bold">{organization}</p>
-        <p className=" text-sm font-bold">{githubUrl}</p>
-        <p className=" text-sm font-bold">{productionUrl}</p>
+        <div className="product__detail_wrapper p-16">
+          <ProjectInfo title={title} role={role} />
+          <div className="text-center my-8">
+            <BuyMeBtn />
+          </div>
+          <Tech
+            frontend={tech.frontend}
+            backend={tech.backend}
+            others={tech.others}
+            database={tech.database}
+          />
+          <LinkClients
+            productionUrl={productionUrl}
+            clients={clients}
+            organization={organization}
+            githubUrl={githubUrl}
+          />
+          {subtitle && (
+            <>
+              <h3 className="text-primary text-xl my-6 font-bold">
+                What I did:
+              </h3>
+              <p>{subtitle}</p>
+            </>
+          )}
+          {description && (
+            <div className="product_detail_block_render leading-8">
+              <h3 className="text-primary text-xl my-6">More details</h3>
+              <BlocksRenderer content={description} />
+            </div>
+          )}
+        </div>
+        <div className="text-center">
+          <BuyMeBtn />
+        </div>
       </div>
     </>
   );

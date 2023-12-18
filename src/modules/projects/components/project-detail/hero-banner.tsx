@@ -13,7 +13,7 @@ const HeroBanner: React.FC<ThumbnailProps> = ({images, size = "large"}) => {
   return (
     <div className="relative w-full flex justify-center items-center">
       {images && images.length > 0 && images[0] && images[0].ext === ".mp4" && (
-        <video autoPlay muted className="w-full max-h-[400px]">
+        <video autoPlay muted className="w-full max-w-[1300px] h-auto ">
           <source src={images[0].url} type="video/mp4" />
         </video>
       )}
@@ -29,7 +29,7 @@ function ImageOrPlaceholder({image}: IHeroBannerProps) {
     <Image
       src={image.url}
       alt="Hero Banner"
-      className="w-full h-auto"
+      className="w-full h-auto max-h-[762px] max-w-[1300px]"
       draggable={false}
       width={image.width}
       height={image.height}

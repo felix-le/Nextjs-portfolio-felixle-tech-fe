@@ -42,7 +42,7 @@ const modalStyles = createUseStyles({
     padding: "3rem",
 
     "@media (min-width: 1250px)": {
-      maxWidth: "80%",
+      maxWidth: "1400px",
     },
 
     // "@media (min-width: 992px)": {
