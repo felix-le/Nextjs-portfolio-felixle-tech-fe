@@ -48,9 +48,8 @@ const Index: React.FC<IProjectDetailProps> = ({projectId = 1}) => {
         <HeroBanner images={mediaModify} />
         <div className="product__detail_wrapper p-16">
           <ProjectInfo title={title} role={role} />
-          <div className="text-center my-8">
-            <BuyMeBtn />
-          </div>
+
+          <BuyMeBtn />
           <Tech
             frontend={tech.frontend}
             backend={tech.backend}

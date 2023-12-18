@@ -36,8 +36,8 @@ const ProjectPreview = ({
       <button className="cursor-pointer h-full" onClick={openModal}>
         <div className="font-normal block p-[25px]  cursor-pointer  relative h-full">
           <div className="group">
-            <div className="flex flex-col justify-between">
-              <div className="w-[280px] h-[333] flex flex-col justify-center items-center">
+            <div className="flex flex-col justify-between w-full">
+              <div className="w-[280px] h-[333px] flex flex-col justify-center items-center my-0 mx-auto">
                 <Thumbnail thumbnail={displayThumbnail} size="full" />
               </div>
               <div className="mt-4">

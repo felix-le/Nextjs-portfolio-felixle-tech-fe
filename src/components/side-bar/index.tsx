@@ -1,11 +1,7 @@
 "use client";
 import React, {useContext, ReactElement} from "react";
 import {Dialog, Disclosure, Transition} from "@headlessui/react";
-import {
-  XMarkIcon,
-  ChevronDownIcon,
-  PlusIcon,
-} from "@heroicons/react/24/outline";
+import {XMarkIcon, ChevronDownIcon} from "@heroicons/react/24/outline";
 import {filterFields} from "./filter-fields";
 import {FilterContext} from "@lib/context/filer-context";
 
