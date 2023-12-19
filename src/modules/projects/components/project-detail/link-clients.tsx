@@ -31,8 +31,11 @@ const LinkClients = ({
         )}
         {githubUrl && (
           <li className="w-[45%]">
-            <p className="leading-8">
-              <strong>Github Link: </strong> {githubUrl}
+            <p className="leading-8 ">
+              <strong>Github Link: </strong>{" "}
+              <a className="text-blue" href={githubUrl} target="_blank">
+                Github
+              </a>
             </p>
           </li>
         )}
