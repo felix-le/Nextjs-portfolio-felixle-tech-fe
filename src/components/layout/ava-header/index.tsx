@@ -25,7 +25,7 @@ const LINKS = [
     id: 5,
     title: "Resume",
     icon: "",
-    link: "https://drive.google.com/file/d/1ARpWWlGCawPvYLYdu0pa18g-lOXP8ZL5/view?usp=sharing",
+    link: "https://drive.google.com/file/d/1TVMc4l4GDhvD65YEoKcXyupGcccPQp68/view?usp=sharing",
   },
   {
     id: 6,
