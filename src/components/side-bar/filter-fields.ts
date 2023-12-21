@@ -10,6 +10,7 @@ const filterFields: FilterSection[] = [
         label:
           "JavaScript, React, NextJS, TypeScript, RESTful API, Redux, Gatsby",
       },
+      {value: "Mean", label: "Angular, NodeJS, ExpressJS"},
       {value: "Shopify", label: "Shopify"},
       {value: "TailwindCSS", label: "TailwindCSS"},
     ],
