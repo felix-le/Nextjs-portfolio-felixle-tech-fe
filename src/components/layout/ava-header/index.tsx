@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import AvaHeader from "@images/ava.jpeg";
+import {HeartIcon} from "@heroicons/react/24/solid";
 
 const LINKS = [
   {
@@ -61,8 +62,14 @@ const index = () => {
                 <span className="text-brand-node"> NodeJS </span>,
                 <span className="text-brand-expressjs"> ExpressJS</span>
               </p>
-              <p className="text-sm  text-center lg:text-left mt-3 lg:mt-0 mb-1 ">
-                Others: PHP, MySQL, MongoDB, Docker, Git, CI/CD
+              <p className="text-sm text-primary text-center lg:text-left mt-3 lg:mt-0 mb-1 flex ">
+                <HeartIcon className="w-4" />
+                <HeartIcon className="w-4" />
+                <HeartIcon className="w-4" />
+                &nbsp;A happy man plays with code.&nbsp;
+                <HeartIcon className="w-4" />
+                <HeartIcon className="w-4" />
+                <HeartIcon className="w-4" />
               </p>
               <ul className="flex p-0 m-0 mt-3 lg:mt-2 lg:justify-start justify-center flex-wrap text-center">
                 {LINKS.map((link) => (
