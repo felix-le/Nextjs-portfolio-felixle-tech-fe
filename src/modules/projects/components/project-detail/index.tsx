@@ -67,7 +67,7 @@ const Index: React.FC<IProjectDetailProps> = ({projectId = 1}) => {
               <h3 className="text-primary text-xl my-6 font-bold">
                 What I did:
               </h3>
-              <p>{subtitle}</p>
+              <p className="leading-6">{subtitle}</p>
             </>
           )}
           {description && (
