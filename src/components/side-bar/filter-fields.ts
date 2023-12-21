@@ -7,8 +7,7 @@ const filterFields: FilterSection[] = [
     options: [
       {
         value: "JavaScript",
-        label:
-          "JavaScript, React, NextJS, TypeScript, RESTful API, Redux, Gatsby",
+        label: "JavaScript, React, NextJS, TypeScript",
       },
       {value: "Mean", label: "Angular, NodeJS, ExpressJS"},
       {value: "Shopify", label: "Shopify"},
