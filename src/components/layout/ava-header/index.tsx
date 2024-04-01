@@ -66,7 +66,8 @@ const index = () => {
                 <HeartIcon className="w-4" />
                 <HeartIcon className="w-4" />
                 <HeartIcon className="w-4" />
-                &nbsp;A happy man plays with code.&nbsp;
+                &nbsp;Professional, Hard Working, Friendly, Innovative,
+                Adaptable.&nbsp;
                 <HeartIcon className="w-4" />
                 <HeartIcon className="w-4" />
                 <HeartIcon className="w-4" />
