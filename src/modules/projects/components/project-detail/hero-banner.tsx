@@ -17,7 +17,7 @@ const HeroBanner: React.FC<ThumbnailProps> = ({images, size = "large"}) => {
           autoPlay
           muted
           controls
-          className="w-full max-w-[1300px] h-auto "
+          className="w-full max-w-[1300px] h-auto max-h-[400px]"
         >
           <source src={images[0].url} type="video/mp4" />
         </video>
